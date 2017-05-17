@@ -1,9 +1,10 @@
 <?php
-namespace HobbIoT\Auth;
+namespace Fridzema\Auth;
 
 use Illuminate\Auth\EloquentUserProvider;
 
-class CacheableEloquentUserProvider extends EloquentUserProvider {
+class CacheableEloquentUserProvider extends EloquentUserProvider
+{
 
     /**
      * Retrieve a user by their unique identifier.
@@ -16,7 +17,7 @@ class CacheableEloquentUserProvider extends EloquentUserProvider {
     public function retrieveById($identifier)
     {
         return cache()->remember($this->getModel() . '_By_Id_' . $identifier, 60,
-            function() use ($identifier) {
+            function () use ($identifier) {
                 return $this->createModel()->newQuery()->find($identifier);
             }
         );
@@ -36,16 +37,15 @@ class CacheableEloquentUserProvider extends EloquentUserProvider {
         $model = $this->createModel();
 
         return cache()->remember($this->getModel() . '_By_Id_Token_' . $identifier, 60,
-            function() use ($model, $identifier, $token) {
+            function () use ($model, $identifier, $token) {
                 return $model->newQuery()
-                                ->where($model->getAuthIdentifierName(), $identifier)
-                                ->where($model->getRememberTokenName(), $token)
-                                ->first();
+                    ->where($model->getAuthIdentifierName(), $identifier)
+                    ->where($model->getRememberTokenName(), $token)
+                    ->first();
             }
         );
     }
 
-    // キャッシュクリア
     public static function clearCache($model)
     {
         cache()->forget(get_class($model) . '_By_Id_' . $model->id);

@@ -1,22 +1,22 @@
 # cacheable-auth-user
-[![Latest Stable Version](https://poser.pugx.org/hobbiot/cacheable-auth-user/v/stable)](https://packagist.org/packages/hobbiot/cacheable-auth-user) [![Total Downloads](https://poser.pugx.org/hobbiot/cacheable-auth-user/downloads)](https://packagist.org/packages/hobbiot/cacheable-auth-user) [![Latest Unstable Version](https://poser.pugx.org/hobbiot/cacheable-auth-user/v/unstable)](https://packagist.org/packages/hobbiot/cacheable-auth-user) [![License](https://poser.pugx.org/hobbiot/cacheable-auth-user/license)](https://packagist.org/packages/hobbiot/cacheable-auth-user)
+[![Latest Stable Version](https://poser.pugx.org/Fridzema/cacheable-auth-user/v/stable)](https://packagist.org/packages/Fridzema/cacheable-auth-user) [![Total Downloads](https://poser.pugx.org/Fridzema/cacheable-auth-user/downloads)](https://packagist.org/packages/Fridzema/cacheable-auth-user) [![Latest Unstable Version](https://poser.pugx.org/Fridzema/cacheable-auth-user/v/unstable)](https://packagist.org/packages/Fridzema/cacheable-auth-user) [![License](https://poser.pugx.org/Fridzema/cacheable-auth-user/license)](https://packagist.org/packages/Fridzema/cacheable-auth-user)
 
   Cacheable Auth::user() for Laravel 5.3.
 
 ## Installation
 Composer  
 ```terminal
-composer require hobbiot/cacheable-auth-user
+composer require Fridzema/cacheable-auth-user
 ```
 
 ### Laravel
 #### app.php
-In your `config/app.php` add `HobbIoT\Auth\CacheableAuthUserServiceProvider::class` to the end of the `providers` array:
+In your `config/app.php` add `Fridzema\Auth\CacheableAuthUserServiceProvider::class` to the end of the `providers` array:
 
 ```php
 'providers' => [
     ...
-        HobbIoT\Auth\CacheableAuthUserServiceProvider::class,
+        Fridzema\Auth\CacheableAuthUserServiceProvider::class,
     ...
 ],
 ```

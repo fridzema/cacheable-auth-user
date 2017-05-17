@@ -1,5 +1,5 @@
 <?php
-namespace HobbIoT\Auth;
+namespace Fridzema\Auth;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -15,7 +15,7 @@ class CacheableAuthUserServiceProvider extends ServiceProvider
     {
         //
         $this->app['auth']->provider('cacheableEloquent',
-            function($app, $config) {
+            function ($app, $config) {
                 $config['model']::updated(function ($model) {
                     CacheableEloquentUserProvider::clearCache($model);
                 });
