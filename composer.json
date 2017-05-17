@@ -1,6 +1,6 @@
 {
     "name": "fridzema/cacheable-auth-user",
-    "description": "Cache Auth::user() for Laravel 5.3. This package add new driver to laravel.",
+    "description": "Cache Auth::user() for Laravel 5.4.* This package add new driver to laravel.",
     "keywords": ["laravel", "auth", "cache"],
     "license": "MIT",
     "authors": [

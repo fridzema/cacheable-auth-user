@@ -13,7 +13,6 @@ class CacheableAuthUserServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
         $this->app['auth']->provider('cacheableEloquent',
             function ($app, $config) {
                 $config['model']::updated(function ($model) {
